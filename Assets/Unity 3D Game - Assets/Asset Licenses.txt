@@ -1,0 +1,21 @@
+All assets used in this course are sourced under the CC0 license.
+
+
+Player Model
+---------------------
+KayKit : Adventurers Character Pack (2.0)
+Created/distributed by Kay Lousberg (www.kaylousberg.com)
+Creation date: 22/10/2025 09:00
+
+
+Platform Models
+---------------------
+KayKit : Platformer Pack (1.0)
+Created/distributed by Kay Lousberg (www.kaylousberg.com)
+Creation date: 10/03/2025 12:00
+
+
+Skybox
+---------------------
+Cloudy Skyboxes by Screaming Brain Studios
+https://opengameart.org/content/cloudy-skyboxes-0
