@@ -34,6 +34,15 @@ public class PlayerController : MonoBehaviour
         rig.linearVelocity = velocity;
 
     }
+    void Update()
+    {
+        if (moveInput.magnitude == 0)
+            return;
+
+        float targetAngle = Mathf.Atan2(moveInput.x, moveInput.y) * Mathf.Rad2Deg;
+        float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, Time.deltaTime * 50);
+        transform.eulerAngles = new Vector3(0, angle, 0);
+    }
 
     bool IsGrounded()
     {
