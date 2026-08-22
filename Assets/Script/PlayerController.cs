@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         // Physics code will go here.
         Vector3 velocity = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
-        rig.linearVelocity = velocity;
+
 
         if (jumpInput && IsGrounded())
         {
