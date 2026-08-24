@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     [SerializeField]
     private float jumpForce;
+    [SerializeField]
+    private float rotationSpeed = 10f;
     private Vector2 moveInput;
     private bool jumpInput;
     private Rigidbody rig;
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         float targetAngle = Mathf.Atan2(moveInput.x, moveInput.y) * Mathf.Rad2Deg;
-        float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, Time.deltaTime * 50);
+        float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, Time.deltaTime * rotationSpeed);
         transform.eulerAngles = new Vector3(0, angle, 0);
     }
 
