@@ -559,7 +559,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 51b705d6ee5dc9c42889f7176e72eeaf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51b705d6ee5dc9c42889f7176e72eeaf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -798,7 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 7
   jumpForce: 14
-  rotationSpeed: 10
+  rotationSpeed: 15
   anim: {fileID: 1681672284}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
