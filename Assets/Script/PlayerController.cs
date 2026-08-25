@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpInput;
     private Rigidbody rig;
+    [SerializeField]
+    private Animator anim;
 
     void Awake()
     {
@@ -34,6 +36,10 @@ public class PlayerController : MonoBehaviour
         velocity.y = rig.linearVelocity.y;
 
         rig.linearVelocity = velocity;
+
+        // Update the animation state.
+        anim.SetBool("Moving", moveInput.magnitude > 0);
+        anim.SetBool("InAir", !IsGrounded());
 
     }
     void Update()
