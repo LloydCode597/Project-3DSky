@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rig;
     [SerializeField]
     private Animator anim;
+    private int score;
+    [SerializeField]
+    private TMP_Text scoreText;
+
+    void Start()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
 
     void Awake()
     {
@@ -71,4 +80,9 @@ public class PlayerController : MonoBehaviour
         jumpInput = context.ReadValueAsButton();
     }
 
+    public void IncreaseScore(int amount)
+    {
+        score += amount;
+        scoreText.text = "Score: " + score.ToString();
+    }
 }

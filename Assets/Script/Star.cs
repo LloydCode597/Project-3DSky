@@ -29,7 +29,7 @@ public class Star : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Add Score");
+            other.GetComponent<PlayerController>().IncreaseScore(1);
             Destroy(gameObject);
         }
     }
