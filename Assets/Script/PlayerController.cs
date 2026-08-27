@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,6 +51,12 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Moving", moveInput.magnitude > 0);
         anim.SetBool("InAir", !IsGrounded());
 
+        // Game over if the player falls off.
+        if (transform.position.y < -10)
+        {
+            GameOver();
+        }
+
     }
     void Update()
     {
@@ -85,4 +92,11 @@ public class PlayerController : MonoBehaviour
         score += amount;
         scoreText.text = "Score: " + score.ToString();
     }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
 }
