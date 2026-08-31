@@ -20,6 +20,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private TMP_Text scoreText;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip jumpSound;
+
+    [SerializeField]
+    private AudioClip scoreSound;
+
     void Start()
     {
         scoreText.text = "Score: " + score.ToString();
@@ -40,6 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpInput = false;
             rig.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+            audioSource.PlayOneShot(jumpSound);
         }
 
         jumpInput = false;
@@ -91,6 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         score += amount;
         scoreText.text = "Score: " + score.ToString();
+        audioSource.PlayOneShot(scoreSound);
     }
 
     public void GameOver()
